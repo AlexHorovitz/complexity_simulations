@@ -5,7 +5,7 @@ This repository contains simulations that explore the principles of complexity a
 ## Simulations Included
 
 ### 1. **Complexity Simulation with Actor Model**
-   - **Directory**: [`complexity_simulation_actor_model/`](complexity_simulation_actor_model)
+   - **Directory**: [`us_complexity_simulation/`](us_complexity_simulation)
    - **Description**: 
      - Models the challenges of constructing a Rawlsian-style social contract among the 50 U.S. states using the **Actor Model**.
      - Each state is an independent actor that interacts asynchronously through message passing.
