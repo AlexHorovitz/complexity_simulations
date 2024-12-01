@@ -12,7 +12,7 @@ This project simulates a **Rock-Paper-Scissors** game played by agents on an 8x8
 
 ## Requirements
 
-- Python 3.8 or higher
+- Python 3.10 or higher
 - Dependencies (install using `pip`):
   - `ray`
   - `numpy`
