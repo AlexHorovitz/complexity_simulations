@@ -1,12 +1,12 @@
 # Complexity Simulation with Actor Model
 
-This project simulates the challenges of constructing a Rawlsian-style social contract among the 50 U.S. states, using the **Actor Model** to represent states as independent agents interacting in a dynamic environment. The simulation explores how diversity, the number of agents, and resource disparities affect the ability to form stable and equitable policies.
+This project simulates the challenges of constructing a Rawlsian-style social contract among the populations of the 50 U.S. states, using the **Actor Model** to represent people as independent agents interacting in a dynamic environment. The simulation explores how diversity, the number of agents, and resource disparities affect the ability to form stable and equitable policies.
 
 ## Key Features
 
 - **Actor Model Architecture**: Each state operates as an independent actor, processing messages and interacting asynchronously.
 - **Real-World Data Integration**: Incorporates demographic and economic data for U.S. states.
-- **Dynamic Interactions**: Models policy negotiations, resource exchanges, and coalition formations between states.
+- **Dynamic Interactions**: Models policy negotiations, resource exchanges, and coalition formations between people and states.
 - **Evaluation Metrics**: Measures fairness, stability, and satisfaction of the social contract over iterations.
 - **Visualization Tools**: Generates maps and charts to visualize simulation outcomes.
 
