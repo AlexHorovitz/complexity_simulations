@@ -1,11 +1,20 @@
 #!rps/bin/python3.11
 import ray
 import numpy as np
+import argparse
 from simulation.grid import create_grid, assign_neighbors
 from simulation.rounds import simulate_round
 from visualization.visualizer import visualize_scores_over_time
 
 def main():
+    # Parse command-line arguments
+    parser = argparse.ArgumentParser(description="Run the Rock-Paper-Scissors simulation.")
+    parser.add_argument("--rounds", type=int, default=100, help="Number of rounds to simulate")
+    parser.add_argument("--randomness", type=float, default=0.1, 
+                        help="Probability of choosing a random move (0 to 1)")
+    args = parser.parse_args()
+
+    # Initialize Ray
     ray.init()
 
     # Initialize grid
@@ -13,15 +22,20 @@ def main():
     grid = create_grid(grid_size)
     assign_neighbors(grid)
 
-    # Simulate 100 rounds and collect round-specific scores
-    rounds = 40
+    # Pass randomness probability to agents
+    for i in range(grid_size):
+        for j in range(grid_size):
+            grid[i, j].set_randomness.remote(args.randomness)
+
+    # Simulate rounds and collect round-specific scores
+    rounds = args.rounds
     round_scores = []
 
     for round_num in range(rounds):
         print(f"Simulating Round {round_num + 1}")
-
-        # Simulate the round and collect scores
         simulate_round(grid)
+
+        # Collect scores for the round
         scores = np.array([[ray.get(agent.get_score.remote()) for agent in row] for row in grid])
 
         # Reset scores after collecting round-specific data
@@ -34,7 +48,7 @@ def main():
     # Convert to a 3D array (rounds x grid_size x grid_size)
     round_scores = np.array(round_scores)
 
-    # Visualize all rounds
+    # Visualize results
     visualize_scores_over_time(round_scores)
 
 if __name__ == "__main__":
