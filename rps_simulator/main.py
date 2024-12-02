@@ -1,4 +1,4 @@
-#!rps/bin/python3.10
+#!rps/bin/python3.11
 import ray
 import numpy as np
 from simulation.grid import create_grid, assign_neighbors
