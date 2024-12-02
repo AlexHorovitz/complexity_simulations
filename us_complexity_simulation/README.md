@@ -1,4 +1,4 @@
-# Complexity Simulation with Actor Model
+# US Complexity Simulation
 
 This project simulates the challenges of constructing a Rawlsian-style social contract among the populations of the 50 U.S. states, using the **Actor Model** to represent people as independent agents interacting in a dynamic environment. The simulation explores how diversity, the number of agents, and resource disparities affect the ability to form stable and equitable policies.
 
