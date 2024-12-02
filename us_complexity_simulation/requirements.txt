@@ -1,0 +1,5 @@
+networkx==3.0        # For creating and managing networks of agents
+matplotlib==3.8.0    # For visualizing metrics and outcomes
+pandas==2.1.0        # For data handling and processing (e.g., demographic data)
+numpy==1.26.0        # For numerical operations and randomization
+geopandas==0.13.0    # Optional: For geographic visualizations (if needed)
