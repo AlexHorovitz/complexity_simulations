@@ -1,4 +1,4 @@
-#!rps/bin/python3.11
+#!rps/bin/python3
 import ray
 import numpy as np
 import argparse
@@ -9,6 +9,7 @@ from visualization.visualizer import visualize_scores_over_time
 def main():
     # Parse command-line arguments
     parser = argparse.ArgumentParser(description="Run the Rock-Paper-Scissors simulation.")
+    parser.add_argument("--grid-size", type=int, default=8, help="Size of the grid (NxN)")
     parser.add_argument("--rounds", type=int, default=100, help="Number of rounds to simulate")
     parser.add_argument("--randomness", type=float, default=0.1, 
                         help="Probability of choosing a random move (0 to 1)")
@@ -18,7 +19,7 @@ def main():
     ray.init()
 
     # Initialize grid
-    grid_size = 8
+    grid_size = args.grid_size
     grid = create_grid(grid_size)
     assign_neighbors(grid)
 
