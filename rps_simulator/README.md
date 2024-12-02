@@ -5,7 +5,7 @@ This project simulates a **Rock-Paper-Scissors** game played by agents on an 8x8
 
 ## Features
 
-- Simulates an **8x8 grid** of agents playing Rock-Paper-Scissors with neighbors.
+- Simulates an **NxN grid** of agents playing Rock-Paper-Scissors with neighbors.
 - Tracks scores per round and highlights top-performing agents.
 - Supports configurable **number of rounds** and **randomness** in decision-making.
 - Visualizes results as heatmaps with highlights for top scorers.
@@ -49,6 +49,7 @@ python main.py [--rounds <num_rounds>] [--randomness <probability>]
 #### Options:
 - `--rounds`: Number of rounds to simulate (default: 100).
 - `--randomness`: Probability of agents making a random move (default: 0.1).
+- `--grid-size `:Size of the grid NxN (default: 8x8).
 
 #### Examples:
 - Simulate 100 rounds with 10% randomness:
