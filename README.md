@@ -16,7 +16,7 @@ This repository contains simulations that explore the principles of complexity a
    - **Metrics**:
      - Fairness, stability, and satisfaction of the social contract.
    - **Run Instructions**:
-     See the [local README](complexity_simulation_actor_model/README.md).
+     See the [local README](us_complexity_simulation/README.md).
 
 ---
 
