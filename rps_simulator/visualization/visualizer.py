@@ -1,5 +1,6 @@
 import matplotlib.pyplot as plt
 import numpy as np
+import math
 from matplotlib.patches import Rectangle
 
 def visualize_scores_over_time(scores_over_time):
@@ -13,9 +14,10 @@ def visualize_scores_over_time(scores_over_time):
 
     # Set up a 10xN grid for N rounds
     n_cols = 10
-    n_rows = 4
+    n_rows = math.ceil(num_rounds/10)
     fig, axes = plt.subplots(n_rows, n_cols, figsize=(20, 20), constrained_layout=True)
     axes = axes.flatten()
+    print(str(axes))
 
     for round_num in range(num_rounds):
         scores = scores_over_time[round_num]
@@ -27,7 +29,7 @@ def visualize_scores_over_time(scores_over_time):
 
         # Display the scores as a heatmap
         im = ax.matshow(scores, cmap="coolwarm")
-        ax.set_title(f"R{round_num + 1}\nTS: {top_score}", fontsize=6)
+        ax.set_title(f"R{round_num + 1}\nTopScore: {top_score}", fontsize=6)
         ax.axis("off")
 
         # Highlight top-scoring agents
